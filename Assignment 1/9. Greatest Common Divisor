@@ -1,0 +1,12 @@
+def gcd(a, b):
+    if(b == 0):
+        return abs(a)
+    else:
+        return gcd(b, a % b)
+ 
+a = int(input("A="))
+b = int(input("B="))
+ 
+
+print(end="")
+print(gcd(a,b))

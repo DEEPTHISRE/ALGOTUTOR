@@ -1,0 +1,29 @@
+is_prime = [True]*5001
+p = 2
+while p*p <= 5001:
+    if is_prime[p]:
+        for num in range(2*p, 5001, p):
+            is_prime[num] = False
+    p += 1
+
+class Solution:
+    
+    def divisors_count(self, num):
+        count = 0
+        temp = num
+        for factor in range(2, num):
+            if not temp%factor:
+                while not temp%factor:
+                    temp 
+                count += 1
+        if count == 2:
+            return True
+        return False
+            
+    def solve(self, A):
+        lucky_num_count = 0
+        for num in range(6, A+1):
+            if not is_prime[num] and self.divisors_count(num):
+                lucky_num_count += 1
+        return lucky_num_count
+        }

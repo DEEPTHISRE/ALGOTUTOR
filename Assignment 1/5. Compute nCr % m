@@ -1,0 +1,13 @@
+def ncr(n, r, m):
+    
+    num = den = 1
+    for i in range(r):
+        num = (num * (n - i)) % m
+        den = (den * (i + 1)) % m
+    return (num * pow(den,m - 2, m)) % m
+ 
+
+n=int(input("A="))
+r=int(input("B="))
+m=int(input("C="))
+print(ncr(n, r, m))

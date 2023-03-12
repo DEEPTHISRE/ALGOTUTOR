@@ -1,0 +1,29 @@
+def isPrimenumber(a, isPrime):
+    isPrime[0] = isPrime[1] = False
+    for i in range(2, n+1):
+        isPrime[i] = True
+        prod = 2
+        while(prod*prod <= n):
+            if (isPrime[prod] == True):
+                i = prod*prod
+                while(i <= n):
+                    isPrime[i] = False
+                    i += prod
+                    prod += 1
+          
+
+def findPrimePair(x):
+    isPrime = [0] * (x+1)
+    isPrimenumber(x, isPrime)
+  
+    
+    for i in range(0, x):
+      
+        if (isPrime[i] and isPrime[x - i]):
+          
+            print(i,(x - i))
+            return
+              
+
+n = int(input())
+findPrimePair(n)

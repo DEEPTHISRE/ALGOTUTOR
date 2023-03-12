@@ -1,0 +1,29 @@
+import math as mt
+def MaxGCD(a, n):
+    Prefix=[0 for i in range(n + 2)]
+    Suffix=[0 for i in range(n + 2)]
+    Prefix[1] = a[0]
+    for i in range(2,n+1):
+        Prefix[i] = mt.gcd(Prefix[i - 1], a[i - 1])
+        Suffix[n] = a[n - 1]
+ 
+    
+    for i in range(n-1,0,-1):
+        Suffix[i] =mt.gcd(Suffix[i + 1], a[i - 1])
+ 
+    
+    ans = max(Suffix[2], Prefix[n - 1])
+ 
+   
+    for i in range(2,n):
+        ans = max(ans, mt.gcd(Prefix[i - 1], Suffix[i + 1]))
+    return ans
+a=[]
+n=int(input())
+for i in range(0,n):
+   l=int(input())
+   a.append(l)
+print(a)
+n = len(a)
+ 
+print(MaxGCD(a, n))
