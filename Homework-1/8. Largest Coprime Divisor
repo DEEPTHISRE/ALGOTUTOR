@@ -1,0 +1,21 @@
+def gcd (a, b):
+
+    if a == 0 or b == 0:
+        return 0
+
+    if a == b:
+        return a
+
+    if a > b:
+        return gcd(a - b, b)
+     
+    return gcd(a, b - a)
+
+def coPrime(x, y):
+    while gcd(x, y) != 1:
+        x = x / gcd(x, y)
+    return int(x)
+
+a = int(input("A="))
+b = int(input("B="))
+print(coPrime(a, b))

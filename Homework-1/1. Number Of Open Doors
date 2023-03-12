@@ -1,0 +1,8 @@
+import math
+def countOpenDoors(N):
+    doorsOpen = int(math.sqrt(N))
+    return doorsOpen
+  
+
+a = int(input("A="))
+print(countOpenDoors(a))

@@ -1,0 +1,28 @@
+def isPrime(n) :
+ 
+    for i in range(2, int(n ** (1/2)) + 1) :
+        if (n % i == 0) :
+            return False;
+     
+    return True;
+
+def minCountPrime(N) :
+
+    if (isPrime(N)) :
+        minCount = 1;
+
+    elif (N % 2 == 0) :
+        minCount = 2;
+
+    else :
+
+        if (isPrime(N - 2)) :
+            minCount = 2;
+
+        else :
+            minCount = 3;
+ 
+    print(minCount) ;
+ 
+a=int(input("A="));
+minCountPrime(a);

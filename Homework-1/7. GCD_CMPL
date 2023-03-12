@@ -1,0 +1,16 @@
+int gcd(int n, int m) {
+ if (n%m ==0) return m;
+ if (n < m) swap(n, m);
+ while (m > 0) {
+ n = n%m;
+19
+ swap(n, m);
+ }
+ return n;
+ }
+
+
+
+
+
+"Θlog(n)"

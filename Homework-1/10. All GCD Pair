@@ -1,0 +1,42 @@
+from math import sqrt, gcd
+
+def printArr(a, n):
+    for i in range(n):
+        print(a[i],end = " ")
+
+def findNumbers(a, n):
+
+    a.sort(reverse = True)
+ 
+    freq = [0 for i in range(a[0] + 1)]
+ 
+    for i in range(n):
+        freq[a[i]] += 1
+
+    size = int(sqrt(n))
+    b = [0 for i in range(len(a))]
+    l = 0
+ 
+    for i in range(n):
+        if (freq[a[i]] > 0):
+
+            b[l] = a[i]
+
+            freq[b[l]] -= 1
+            l += 1
+            for j in range(l):
+                if (i != j):
+
+                    x = gcd(a[i], b[j])
+ 
+                    freq[x] -= 2
+ 
+    printArr(b, size)
+
+array=[]
+n=int(input("Number of elements in array:"))
+for i in range(0,n):
+   l=int(input())
+   array.append(l)
+n = len(array)
+findNumbers(array, n)
